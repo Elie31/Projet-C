@@ -4,12 +4,15 @@
 #include <string.h>
 
 void formatAdresse(int a []);
-void conversion(int a[]);
+void conversion(int a[], int binaire[]);
+void decoderIp(int b[]);
+
 
 void main() {
 int a[4];
+int b[31];
 formatAdresse(a);
-conversion(a);
+conversion(a,b);
 }
 void formatAdresse(int a[]){
 unsigned ip1, ip2, ip3, ip4, ip5;
@@ -48,10 +51,9 @@ a[4] = ip5;
 printf("votre adresse ip est : %d.%d.%d.%d/%d\n",a[0],a[1],a[2],a[3],a[4]);
 }
 
-void conversion(int a[]){
+void conversion(int a[], int binaire[]){
 
 int j=0;
-int binaire[31];
 
 for(int i=0; i<4; i++)
 {
@@ -86,4 +88,13 @@ for(int i=0; i<4; i++)
 for(int k=0; k<32; k++){
 printf("%d,", binaire[k]);
 }
+
+void decoderIp(int b[]){
+
+
+}
+
+
+
+
 }
