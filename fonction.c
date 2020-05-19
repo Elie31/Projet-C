@@ -50,26 +50,40 @@ printf("votre adresse ip est : %d.%d.%d.%d/%d\n",a[0],a[1],a[2],a[3],a[4]);
 
 void conversion(int a[]){
 
-int j;
+int j=0;
 int binaire[31];
 
 for(int i=0; i<4; i++)
 {
-	j=0;
-	while(a[i]!=0 || j<8)
+	
+	while(a[i]!=0)
 	{
 		binaire[j]=a[i]%2;
 		a[i]=a[i]/2;
 		j++;
 	}
+	if (j<8)
+		while (j<8){
+		binaire[j]=0;
+		j++;}
+	else
+		if (j<16 & j>8)
+                	while (j<16){
+                	binaire[j]=0;
+                	j++;}
+		else
+			if (j<24 & j>16)
+                		while (j<24){
+                		binaire[j]=0;
+                		j++;}
+			else
+				if (j<32 & j>24)
+                			while (j<32){
+                			binaire[j]=0;
+                			j++;}
 }
-printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", binaire[0],binaire[1],binaire[2],binaire[3],binaire[4],binaire[5],binaire[6],binaire[7],binaire[8],binaire[9],binaire[10],binaire[11],binaire[12],binaire[13],binaire[14],binaire[15],binaire[16],binaire[17],binaire[18],binaire[19],binaire[20],binaire[21],binaire[22],binaire[23],binaire[24],binaire[25],binaire[26],binaire[27],binaire[28],binaire[29],binaire[30],binaire[31]);
-/*for(int k=0; k<32; k++){
+
+for(int k=0; k<32; k++){
 printf("%d,", binaire[k]);
 }
-/*printf("\n");
-for(int i=31;i>=0;i--)
-{
-	printf("%d",binaire[i]);
-}*/
 }
