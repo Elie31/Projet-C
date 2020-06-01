@@ -5,7 +5,8 @@
 
 void formatAdresse(int a []);
 void conversion(int a[], int binaire[]);
-void decoderIp(int b[]);
+//void decoderIp(int binaire[]);
+//void calculerReseauHote(int binaire[]);
 
 
 void main() {
@@ -85,16 +86,46 @@ for(int i=0; i<4; i++)
                 			j++;}
 }
 
+int binaire2[31];
+for (int i=0; i<32; i++){
+        binaire2[i]=binaire[i];
+}
+int k = 0;
+int l = 0;
+int m = 7;
+for (int i=0; i<4; i++){
+        while (k<8){
+                binaire2[l]=binaire[m-k];
+                k++;
+                l++;
+        }
+        m = m+8;
+        k = 0;
+}
+
 for(int k=0; k<32; k++){
-printf("%d,", binaire[k]);
+printf("%d,", binaire2[k]);
+}
 }
 
-void decoderIp(int b[]){
-
-
-}
-
-
+/*void decoderIp(int b[]){
 
 
 }
+
+void calculerReseauHote(int a[], int binaire[]){
+int reseau[31];
+for (int i=0; i<32; i++){
+	reseau[i]=binaire[i];
+}
+if (a[4] != 0)
+	for (int k=0; k<32; i++){
+	if k>=a[4]
+		reseau[k]=0;
+	}
+
+}*/
+
+
+
+
