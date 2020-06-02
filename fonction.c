@@ -5,12 +5,9 @@
 
 void formatAdresse(int a []);
 void conversion(int a[], int binaire[]);
-<<<<<<< HEAD
 //void decoderIp(int binaire[]);
 //void calculerReseauHote(int binaire[]);
-=======
-void decoderIp(int a[],int b[]);
->>>>>>> 5736274f3f46beb17fa0240b93a9b59b9d10f073
+
 
 
 void main() {
@@ -18,7 +15,7 @@ void main() {
 	int b[31];
 	formatAdresse(a);
 	conversion(a,b);
-	decoderIp(a,b);
+//	decoderIp(a,b);
 }
 
 void formatAdresse(int a[]){
@@ -64,37 +61,39 @@ void formatAdresse(int a[]){
 
 void conversion(int a[], int binaire[]){
 
+int binaire2[31];
+
 	int j=0;
 
 	for(int i=0; i<4; i++)
 	{
 		
 		while(a[i]!=0){
-			binaire[j]=a[i]%2;
+			binaire2[j]=a[i]%2;
 			a[i]=a[i]/2;
 			j++;
 		}
 		if (j<8){
 			while (j<8){
-				binaire[j]=0;
+				binaire2[j]=0;
 				j++;
 			}
 		}else{
 			if (j<16 & j>8){
 		     	   	while (j<16){
-					binaire[j]=0;
+					binaire2[j]=0;
 					j++;
 				}
 			}else{
 				if (j<24 & j>16){
 		        		while (j<24){
-						binaire[j]=0;
+						binaire2[j]=0;
 						j++;
 					}
 				}else{
 					if (j<32 & j>24){
 		        			while (j<32){
-							binaire[j]=0;
+							binaire2[j]=0;
 							j++;
 						}
 							    
@@ -103,38 +102,38 @@ void conversion(int a[], int binaire[]){
 			}
 		}
 	}
-<<<<<<< HEAD
+
 	if (j<8)
 		while (j<8){
-		binaire[j]=0;
+		binaire2[j]=0;
 		j++;}
 	else
 		if (j<16 & j>=8)
                 	while (j<16){
-                	binaire[j]=0;
+                	binaire2[j]=0;
                 	j++;}
 		else
 			if (j<24 & j>=16)
                 		while (j<24){
-                		binaire[j]=0;
+                		binaire2[j]=0;
                 		j++;}
 			else
 				if (j<32 & j>=24)
                 			while (j<32){
-                			binaire[j]=0;
+                			binaire2[j]=0;
                 			j++;}
-}
 
-int binaire2[31];
+
+
 for (int i=0; i<32; i++){
-        binaire2[i]=binaire[i];
+        binaire[i]=binaire2[i];
 }
 int k = 0;
 int l = 0;
 int m = 7;
 for (int i=0; i<4; i++){
         while (k<8){
-                binaire2[l]=binaire[m-k];
+                binaire[l]=binaire2[m-k];
                 k++;
                 l++;
         }
@@ -143,7 +142,7 @@ for (int i=0; i<4; i++){
 }
 
 for(int k=0; k<32; k++){
-printf("%d,", binaire2[k]);
+printf("%d,", binaire[k]);
 }
 }
 
@@ -204,10 +203,3 @@ if (a[4] != 0)
 
 }*/
 
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 5736274f3f46beb17fa0240b93a9b59b9d10f073
