@@ -70,17 +70,17 @@ for(int i=0; i<4; i++)
 		binaire[j]=0;
 		j++;}
 	else
-		if (j<16 & j>8)
+		if (j<16 & j>=8)
                 	while (j<16){
                 	binaire[j]=0;
                 	j++;}
 		else
-			if (j<24 & j>16)
+			if (j<24 & j>=16)
                 		while (j<24){
                 		binaire[j]=0;
                 		j++;}
 			else
-				if (j<32 & j>24)
+				if (j<32 & j>=24)
                 			while (j<32){
                 			binaire[j]=0;
                 			j++;}
