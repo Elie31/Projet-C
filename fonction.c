@@ -22,6 +22,14 @@ void main(){
 
 }
 
+void viderBuffer(void){
+
+int c;
+
+while((c=getchar()) != EOF && c !='\n');
+}
+
+
 void formatAdresse(int a[]){
 
 FILE *f;
@@ -39,6 +47,7 @@ int erreur2 = 1;
 		}else{
 			erreur=0;
 		}
+	viderBuffer();
 	}
 
 	a[0] = ip1;
